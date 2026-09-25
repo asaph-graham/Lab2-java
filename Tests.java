@@ -5,14 +5,26 @@ import java.util.Collections;
 
 public class Tests {
     public static void main(String[]args){
-        Term t1= new Term("cherry", 15);
-        //System.out.println(t1.getPrefix(3));
+        Term[] terms= new Term[7];
+        terms[0]= new Term("cherry", 15);
+        terms[1]= new Term("apple", 10);
+        terms[2]= new Term("banana", 20);
+        terms[3]= new Term("cherry", 15);
+        terms[4]= new Term("berry", 13);
+        terms[5]= new Term("cherry", 15);
+        terms[6]= new Term("cherry", 15);
 
-        Term t2= new Term("apple", 10);
-        Term t3= new Term("banana", 20);
+        int num= RangeBinarySearch.lastIndexOf(terms, terms[0], Term.byLexicographicOrder());
+        System.out.println(num);
+        
+        // Term t1= new Term("cherry", 15);
+        // //System.out.println(t1.getPrefix(3));
 
-        List<Term> terms = new ArrayList<>(List.of(t1, t2, t3));
-        System.out.println(terms);
+        // Term t2= new Term("apple", 10);
+        // Term t3= new Term("banana", 20);
+
+        // List<Term> terms = new ArrayList<>(List.of(t1, t2, t3));
+        // System.out.println(terms);
         // terms.sort(Term.byLexicographicOrder());
         // System.out.println("Sorted by lexicographic order:");
         // for (Term term : terms) {
@@ -25,11 +37,13 @@ public class Tests {
         //     System.out.println(term);
         // }
 
-        terms.sort(Term.byPrefixOrder(3));
-        System.out.println("Sorted by prefix order (first 3 characters):");
-        for(Term term: terms){
-            //System.out.println(term.getPrefix(3));
-            System.out.println(term.toString());
-        }
+        // terms.sort(Term.byPrefixOrder(3));
+        // System.out.println("Sorted by prefix order (first 3 characters):");
+        // for(Term term: terms){
+        //     //System.out.println(term.getPrefix(3));
+        //     System.out.println(term.toString());
+        // }
+
+        //System.out.println(t1.getWord().compareToIgnoreCase(t2.getWord()));
     }
 }
