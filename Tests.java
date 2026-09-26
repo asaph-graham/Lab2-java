@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.Comparator;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class Tests {
@@ -14,8 +15,12 @@ public class Tests {
         terms[5]= new Term("cherry", 15);
         terms[6]= new Term("cherry", 15);
 
-        int num= RangeBinarySearch.lastIndexOf(terms, terms[0], Term.byLexicographicOrder());
-        System.out.println(num);
+        Autocomplete autocomplete= new Autocomplete(terms);
+        System.out.println(Arrays.toString(autocomplete.allMatches("dor")));
+        System.out.println(autocomplete.numberOfMatches("dor"));
+
+        //int num= RangeBinarySearch.lastIndexOf(terms, terms[1], Term.byPrefixOrder(3));
+        //System.out.println(num);
         
         // Term t1= new Term("cherry", 15);
         // //System.out.println(t1.getPrefix(3));
@@ -45,5 +50,7 @@ public class Tests {
         // }
 
         //System.out.println(t1.getWord().compareToIgnoreCase(t2.getWord()));
+
+
     }
 }
