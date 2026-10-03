@@ -1,6 +1,3 @@
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Comparator;
 
 public class RangeBinarySearch{
@@ -9,18 +6,17 @@ public class RangeBinarySearch{
     // according to the given comparator, or -1 if there are no matching elements.
     // Complexity: O(log N), where N is the length of the array
     public static int firstIndexOf(Term[] terms, Term key, Comparator<Term> comparator) {
-        /* TODO */  //done... isWorking
-        Arrays.sort(terms, comparator);     //to sort alphabetically at runtime(later, when the function is called)
-
+        if(terms==null || terms.length==0){
+            return -1;
+        }
         //implementing binary search here...
-        int lo=0, hi= (terms.length-1);
+        int lo= 0;
+        int hi= (terms.length-1);
         int middle= -1;     //placeholder incase we don't find the word.
-        int keyLength= key.getWord().length();
 
         while(lo<=hi){
             int mid= (lo+hi)/2;
-
-            int compare= key.getWord().compareToIgnoreCase(terms[mid].getPrefix(keyLength));
+            int compare= comparator.compare(key, terms[mid]);
             if(compare<0){
                 hi= mid-1;
             }
@@ -29,26 +25,9 @@ public class RangeBinarySearch{
             }
             else{
                 middle= mid;
-                break;
+                hi= mid-1;      //to find the leftmost/first index of the term
             }
         }
-
-        // finding the first index...
-        if(middle==-1){
-            return middle;  //word was never found
-        }
-        else if(middle==0){
-            return middle;   //in case we are at the first element... trying to avoid out of bounds exception
-        }
-        int compare= terms[middle].getWord().compareToIgnoreCase(terms[middle-1].getWord());
-        while (compare==0){
-            middle--;
-            if(middle==0){
-                return middle;  //so that we avoid out of bounds exception
-            }
-            compare= terms[middle].getWord().compareToIgnoreCase(terms[middle-1].getWord());
-        }
-
         return middle;
     }
 
@@ -56,18 +35,17 @@ public class RangeBinarySearch{
     // according to the given comparator, or -1 if there are no matching elements.
     // Complexity: O(log N)
     public static int lastIndexOf(Term[] terms, Term key, Comparator<Term> comparator) {
-        /* TODO */  //done... isWorking
-        Arrays.sort(terms, comparator);     //to sort alphabetically at runtime(later, when the function is called)
+        if(terms==null || terms.length==0){
+            return -1;
+        }
 
         //implementing binary search here...
         int lo=0, hi= (terms.length-1);
         int middle= -1;     //placeholder incase we don't find the word.
-        int keyLength= key.getWord().length();
 
         while(lo<=hi){
             int mid= (lo+hi)/2;
-
-            int compare= key.getWord().compareToIgnoreCase(terms[mid].getPrefix(keyLength));
+            int compare= comparator.compare(key, terms[mid]);
             if(compare<0){
                 hi= mid-1;
             }
@@ -75,28 +53,9 @@ public class RangeBinarySearch{
                 lo= mid+1;
             }
             else{
-                if(terms.length==1 && compare!=0){
-                    return -1;
-                }
                 middle= mid;
-                break;
+                lo= mid+1;      //to find the rightmost/last index of the term
             }
-        }
-
-        // finding the last index...
-        if(middle==-1){
-            return middle;  //word was never found
-        }
-        else if(middle==(terms.length-1)){
-            return middle;   //in case we are at the last element... trying to avoid out of bounds exception
-        }
-        int compare= terms[middle].getWord().compareToIgnoreCase(terms[middle+1].getWord());
-        while (compare==0){
-            middle++;
-            if(middle==(terms.length-1)){
-                return middle;  //so that we avoid out of bounds exception
-            }
-            compare= terms[middle].getWord().compareToIgnoreCase(terms[middle+1].getWord());
         }
 
         return middle;
