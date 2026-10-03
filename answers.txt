@@ -18,7 +18,8 @@ Name of lab group: [...]
 **    finds the first index of a key that equals the search key.
 ******************************************************************************/
 
-[...]
+The function utilizes the binary search algorithm for the relevant dictionary to find the given prefix.
+The loop runs continuously for smaller and smaller array sizes until only one copy of the prefix remains, and that is the first index.
 
 
 /******************************************************************************
@@ -27,17 +28,15 @@ Name of lab group: [...]
 **    as a function of the number of terms n and the number of matching terms m?
 ******************************************************************************/
 
-sortDictionary():  [...]
+sortDictionary():  O(nlogn)
+    It sorts all n terms by lexicographic order, which runs once in the constructor.
 
-[..short explanation..]
+allMatches():  O(logn + mlogm)
+    It uses two binary searches to find the matching range, which uses O(logn).
+It then sorts the m matches by weight which uses O(mlogm). 
 
-allMatches():  [...]
-
-[..short explanation..]
-
-numberOfMatches():  [...]
-
-[..short explanation..]
+numberOfMatches():  O(logn)
+    Uses two binary searches to find the first and last matches and calculates the count from those indices which requires no additional comparisons.
 
 /******************************************************************************
 ** Appendix: General information
@@ -45,17 +44,16 @@ numberOfMatches():  [...]
 ** A. Approximately how many hours did you spend on the assignment?
 ******************************************************************************/
 
-[..group member..]:  [..hours..]
-[..group member..]:  [..hours..]
-[..group member..]:  [..hours..]
-
+[2500602871 2025/BSE/238/PS ANKUNDA ASAPH GRAHAM]:  [15 hours]
+[2500603030 2025/BSE/030/PS AKATWIJUKA ANNIBOW]:  [15 hours]
+[2500603065 2025/BSE/149/PS ORISHABA AHEBWA VICTORIAN]:  [15 hours]
+[2500603058 2025/BSE/086/PS KAWOOYA PAUL]: [15 hours]
+[2500603077 2025/BSE/063/PS BYAMUKAMA DERRICK]: [15 hours]
 
 /******************************************************************************
 ** B. Are there any known bugs / limitations?
 ******************************************************************************/
-
-[...]
-
+We faced a few challenges with getting the lab to work properly but we created a Tests.java file to help run parts of the lab bit by bit.
 
 /******************************************************************************
 ** C. Did you collaborate with any other students on this lab?
@@ -64,15 +62,14 @@ numberOfMatches():  [...]
 **    may have used in creating your design.
 ******************************************************************************/
 
-[...]
+No collaboration.
+Resources include YouTube videos on comparators in java and a video on binary search from VLE for its implementation.
 
 
 /******************************************************************************
 ** D. Describe any serious problems you encountered.                    
 ******************************************************************************/
-
-[...]
-
+No serious problems. Only challenges trying to get the lab to output the right results.
 
 /******************************************************************************
 ** E. List any other comments here.
@@ -80,5 +77,5 @@ numberOfMatches():  [...]
 **    from doing the assignment, and whether you enjoyed it.                                             
 ******************************************************************************/
 
-[...]
+We mostly enjoyed working through and brainstorming the workflow of the lab's implementation. It took time but the feeling of accomplishment at the end was good.
 
