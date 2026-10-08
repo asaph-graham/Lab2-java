@@ -5,7 +5,7 @@
 ** Lab 2: Autocomplete
 *******************************************************************************/
 
-Name of lab group: [...]
+Name of lab group: Victoria
 - 2500602871 2025/BSE/238/PS ANKUNDA ASAPH GRAHAM
 - 2500603030 2025/BSE/030/PS AKATWIJUKA ANNIBOW
 - 2500603065 2025/BSE/149/PS ORISHABA AHEBWA VICTORIAN
@@ -44,11 +44,11 @@ numberOfMatches():  O(logn)
 ** A. Approximately how many hours did you spend on the assignment?
 ******************************************************************************/
 
-[2500602871 2025/BSE/238/PS ANKUNDA ASAPH GRAHAM]:  [15 hours]
-[2500603030 2025/BSE/030/PS AKATWIJUKA ANNIBOW]:  [15 hours]
-[2500603065 2025/BSE/149/PS ORISHABA AHEBWA VICTORIAN]:  [15 hours]
-[2500603058 2025/BSE/086/PS KAWOOYA PAUL]: [15 hours]
-[2500603077 2025/BSE/063/PS BYAMUKAMA DERRICK]: [15 hours]
+[2500602871 2025/BSE/238/PS ANKUNDA ASAPH GRAHAM]:  [9 hours]
+[2500603030 2025/BSE/030/PS AKATWIJUKA ANNIBOW]:  [5 hours]
+[2500603065 2025/BSE/149/PS ORISHABA AHEBWA VICTORIAN]:  [6 hours]
+[2500603058 2025/BSE/086/PS KAWOOYA PAUL]: [5 hours]
+[2500603077 2025/BSE/063/PS BYAMUKAMA DERRICK]: [5 hours]
 
 /******************************************************************************
 ** B. Are there any known bugs / limitations?
@@ -63,7 +63,7 @@ We faced a few challenges with getting the lab to work properly but we created a
 ******************************************************************************/
 
 No collaboration.
-Resources include YouTube videos on comparators in java and a video on binary search from VLE for its implementation.
+Resources include YouTube videos on comparators in java and a video on the binary search algorithm from VLE for its implementation.
 
 
 /******************************************************************************
